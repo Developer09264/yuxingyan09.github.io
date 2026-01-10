@@ -1,6 +1,9 @@
 body {
-    margin: 0;
-    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10vh;
+    padding: auto;
     background-color: #a0d6d3;
     font-family: 'Arial', sans-serif;
     color: #333;
@@ -44,18 +47,18 @@ h1 {
     transform: rotate(2deg);
 }
 
-.sticky-notes {
-    position: relative;
-    width: 100%;
-    max-width: 1200px;
-    height: 800px;
-    margin: 0 auto 80px;
-    padding: 0;
+#sticky-notes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    padding: 20px;
+    /* border: red solid 1px; */
 }
 
 .note {
     width: 160px;
     height: 160px;
+    /* border: blue solid 1px; */
     background-color: #fff9b1;
     color: #333;
     font-weight: bold;
@@ -64,87 +67,28 @@ h1 {
     align-items: center;
     justify-content: center;
     border-radius: 10px;
-    position: absolute;
 }
 
-/* 随机位置和旋转 */
-.note:nth-child(1) {
-    top: 20px;
-    left: 50px;
-    transform: rotate(-4deg);
-}
+#main-page {
 
-.note:nth-child(2) {
-    top: 80px;
-    left: 250px;
-    transform: rotate(3deg);
-}
+    /* 设置main-page的宽度，窗口的60% */
+    width: 60%;
 
-.note:nth-child(3) {
-    top: 40px;
-    left: 470px;
-    transform: rotate(-2deg);
-}
+    /* 设置main-page的最小宽度，500像素 */
+    min-width: 500px;
 
-.note:nth-child(4) {
-    top: 120px;
-    left: 680px;
-    transform: rotate(5deg);
-}
+    /* 设置main-page的背景颜色，使用白色 */
+    background-color: white;
 
-.note:nth-child(5) {
-    top: 30px;
-    left: 880px;
-    transform: rotate(-3deg);
-}
+    /* 设置盒子阴影，
+     * 参数说明：
+     * x偏移，y偏移，模糊半径，颜色
+     */
+    box-shadow: 5px 10px 5px gray;
 
-.note:nth-child(6) {
-    top: 300px;
-    left: 100px;
-    transform: rotate(2deg);
-}
+    /* 把这个盒子设置为flexbox */
+    display: flex;
 
-.note:nth-child(7) {
-    top: 370px;
-    left: 320px;
-    transform: rotate(-5deg);
-}
-
-.note:nth-child(8) {
-    top: 330px;
-    left: 520px;
-    transform: rotate(4deg);
-}
-
-.note:nth-child(9) {
-    top: 400px;
-    left: 720px;
-    transform: rotate(-2deg);
-}
-
-.note:nth-child(10) {
-    top: 360px;
-    left: 920px;
-    transform: rotate(3deg);
-}
-
-@media (max-width: 768px) {
-    .image-gallery {
-        grid-template-columns: 1fr;
-    }
-
-    .sticky-notes {
-        height: auto;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 20px;
-        position: static;
-        padding: 20px;
-    }
-
-    .note {
-        position: static;
-        transform: rotate(0deg);
-    }
+    /* 这里是圆角，2倍字体大小 */
+    border-radius: 2em;
 }
